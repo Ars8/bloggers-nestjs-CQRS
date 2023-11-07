@@ -6,7 +6,7 @@ import { Blog, BlogSchema } from '../blogs/entities/blog.entity';
 import { Comment, CommentSchema } from 'src/comments/entities/comment.entity';
 import { PostsController } from './posts.controller';
 import { PostsService } from './posts.service';
-import { CommentsRepository } from 'src/comments/comments.repository';
+import { CommentsRepository } from 'src/comments/infrastructure/comments.repository';
 import { LikePost, LikePostSchema } from './entities/like-post.entity';
 import {
   LikeComment,

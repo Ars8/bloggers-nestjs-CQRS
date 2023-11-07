@@ -6,7 +6,7 @@ import { OutputPostDto } from './dto/output-post.dto';
 import { PaginationViewType } from '../helpers/transformToPaginationView';
 import { QueryType } from '../helpers/queryHandler';
 import { CreateCommentDto } from '../comments/dto/create-comment.dto';
-import { CommentsRepository } from '../comments/comments.repository';
+import { CommentsRepository } from '../comments/infrastructure/comments.repository';
 import { OutputCommentDto } from '../comments/dto/output-comment.dto';
 import { LikeStatusPostDto } from './dto/like-status-post.dto';
 

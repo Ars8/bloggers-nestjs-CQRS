@@ -1,7 +1,7 @@
 import { Module, Post } from '@nestjs/common';
-import { CommentsService } from './comments.service';
-import { CommentsController } from './comments.controller';
-import { CommentsRepository } from './comments.repository';
+import { CommentsService } from './application/comments.service';
+import { CommentsController } from './api/comments.controller';
+import { CommentsRepository } from './infrastructure/comments.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Comment, CommentSchema } from './entities/comment.entity';
 import { LikeComment, LikeCommentSchema } from './entities/like-comment.entity';

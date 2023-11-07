@@ -1,22 +1,22 @@
 import { Injectable } from '@nestjs/common';
-import { Comment, CommentDocument } from './entities/comment.entity';
+import { Comment, CommentDocument } from '../entities/comment.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { isValidObjectId, Model } from 'mongoose';
-import { CreateCommentDto } from './dto/create-comment.dto';
-import { idMapper } from '../helpers/id-mapper';
-import { OutputCommentDto } from './dto/output-comment.dto';
-import { QueryType } from '../helpers/queryHandler';
+import { CreateCommentDto } from '../dto/create-comment.dto';
+import { idMapper } from '../../helpers/id-mapper';
+import { OutputCommentDto } from '../dto/output-comment.dto';
+import { QueryType } from '../../helpers/queryHandler';
 import {
   PaginationViewType,
   transformToPaginationView,
-} from '../helpers/transformToPaginationView';
-import { UpdateCommentDto } from './dto/update-comment.dto';
-import { LikeStatusCommentDto } from './dto/like-status-comment.dto';
+} from '../../helpers/transformToPaginationView';
+import { UpdateCommentDto } from '../dto/update-comment.dto';
+import { LikeStatusCommentDto } from '../dto/like-status-comment.dto';
 import {
   LikeComment,
   LikeCommentDocument,
-} from './entities/like-comment.entity';
-import { PreparationComments } from './preparation.comments';
+} from '../entities/like-comment.entity';
+import { PreparationComments } from '../preparation.comments';
 
 @Injectable()
 export class CommentsRepository {

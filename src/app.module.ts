@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { BlogsRepository } from './blogs/blogs.repository';
 import { Cat, CatSchema } from './blogs/cats-schema';
-import { CatsRepository } from './blogs/cats-repository.service';
 import { BlogsModule } from './blogs/blogs.module';
 import { Blog, BlogSchema } from './blogs/entities/blog.entity';
 import { PostsModule } from './posts/posts.module';
@@ -99,10 +96,8 @@ import { ThrottlerModule } from '@nestjs/throttler';
     TestingModule,
     CommentsModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [
-    AppService,
-    CatsRepository,
     BlogExistsValidator,
     {
       provide: APP_FILTER,

@@ -1497,7 +1497,7 @@
     "webpack" "5.75.0"
     "webpack-node-externals" "3.0.0"
 
-"@nestjs/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@nestjs/common@^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/common@^7.0.8 || ^8.0.0 || ^9.0.0", "@nestjs/common@^7.0.9 || ^8.0.0 || ^9.0.0", "@nestjs/common@^8.0.0 || ^9.0.0", "@nestjs/common@^9.0.0", "@nestjs/common@^9.3.12":
+"@nestjs/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@nestjs/common@^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/common@^7.0.8 || ^8.0.0 || ^9.0.0", "@nestjs/common@^7.0.9 || ^8.0.0 || ^9.0.0", "@nestjs/common@^8.0.0 || ^9.0.0", "@nestjs/common@^9.0.0", "@nestjs/common@^9.0.0 || ^10.0.0", "@nestjs/common@^9.3.12":
   "integrity" "sha512-NtrUG2VgCbhmZEO1yRt/Utq16uFRV+xeHAOtdYIsfHGG0ssAV2lVLlvFFAQYh0SQ+KuYY1Gsxd3GK2JFoJCNqQ=="
   "resolved" "https://registry.npmjs.org/@nestjs/common/-/common-9.3.12.tgz"
   "version" "9.3.12"
@@ -1516,7 +1516,7 @@
     "lodash" "4.17.21"
     "uuid" "9.0.0"
 
-"@nestjs/core@^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/core@^7.0.9 || ^8.0.0 || ^9.0.0", "@nestjs/core@^8.0.0 || ^9.0.0", "@nestjs/core@^9.0.0":
+"@nestjs/core@^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/core@^7.0.9 || ^8.0.0 || ^9.0.0", "@nestjs/core@^8.0.0 || ^9.0.0", "@nestjs/core@^9.0.0", "@nestjs/core@^9.0.0 || ^10.0.0":
   "integrity" "sha512-9g1A1G9eirLXEpH21rc6dKb08zHc2+adhCRz8NW39hbejcsxxD72FApJzt4QBQAKvu862ixt/tdpStnFT7lOSw=="
   "resolved" "https://registry.npmjs.org/@nestjs/core/-/core-9.3.9.tgz"
   "version" "9.3.9"
@@ -1527,6 +1527,13 @@
     "path-to-regexp" "3.2.0"
     "tslib" "2.5.0"
     "uid" "2.0.1"
+
+"@nestjs/cqrs@^10.2.6":
+  "integrity" "sha512-QB5D4MnPybYK0y/Md9UoAMt5by/EleFiLVELYtSm2rzKtAcrcYbc8IrmootKs4cqonxskrcdZliqFgtQF+TdjQ=="
+  "resolved" "https://registry.npmjs.org/@nestjs/cqrs/-/cqrs-10.2.6.tgz"
+  "version" "10.2.6"
+  dependencies:
+    "uuid" "9.0.0"
 
 "@nestjs/jwt@^10.0.3":
   "integrity" "sha512-WO8MI3uEMOFKpbO+SAg6l4aRCr+9KvaL+raFMZaXuEUDphXek6pqdox+4tex9242pNSJUA0trfAMaiy/yVrXQg=="
@@ -6513,7 +6520,7 @@
   dependencies:
     "resolve" "^1.1.6"
 
-"reflect-metadata@^0.1.12", "reflect-metadata@^0.1.13":
+"reflect-metadata@^0.1.12", "reflect-metadata@^0.1.13", "reflect-metadata@0.1.13":
   "integrity" "sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg=="
   "resolved" "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
   "version" "0.1.13"
