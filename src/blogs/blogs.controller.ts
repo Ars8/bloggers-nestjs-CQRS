@@ -22,7 +22,7 @@ import { CreateBlogDto } from './dto/create-blog.dto';
 import { OutputBlogDto } from './dto/output-blog.dto';
 import { UpdateBlogDto } from './dto/update-blog.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ExtractUserFromToken } from 'src/auth/guards/extractUserFromToken.guard';
+import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
 
 @Controller('blogs')
 export class BlogsController {

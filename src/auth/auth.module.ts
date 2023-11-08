@@ -12,8 +12,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { MailManager } from '../managers/mailManager';
 import { UsersService } from '../users/users.service';
-import { JwtAuthGuard } from './guards/jwt-auth.guard';
-import { ExtractUserFromToken } from './guards/extractUserFromToken.guard';
+import { JwtAuthGuard } from '../helpers/guards/jwt-auth.guard';
+import { ExtractUserFromToken } from '../helpers/guards/extractUserFromToken.guard';
 
 @Module({
   imports: [

@@ -19,9 +19,9 @@ import { CommentsService } from '../application/comments.service';
 import { CreateCommentDto } from '../dto/create-comment.dto';
 import { UpdateCommentDto } from '../dto/update-comment.dto';
 import { OutputCommentDto } from '../dto/output-comment.dto';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/helpers/guards/jwt-auth.guard';
 import { LikeStatusCommentDto } from '../dto/like-status-comment.dto';
-import { ExtractUserFromToken } from 'src/auth/guards/extractUserFromToken.guard';
+import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
 
 @Controller('comments')
 export class CommentsController {

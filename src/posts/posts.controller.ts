@@ -23,9 +23,9 @@ import { queryHandler } from '../helpers/queryHandler';
 import { CreateCommentDto } from '../comments/dto/create-comment.dto';
 import { OutputCommentDto } from '../comments/dto/output-comment.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/helpers/guards/jwt-auth.guard';
 import { LikeStatusPostDto } from './dto/like-status-post.dto';
-import { ExtractUserFromToken } from 'src/auth/guards/extractUserFromToken.guard';
+import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
 
 @Controller('posts')
 export class PostsController {

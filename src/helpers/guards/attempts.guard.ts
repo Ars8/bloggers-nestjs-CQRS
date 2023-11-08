@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { Observable } from 'rxjs';
-import { Attempts } from '../state/attempts';
+import { Attempts } from '../../auth/state/attempts';
 
 @Injectable()
 export class AttemptsGuard implements CanActivate {
