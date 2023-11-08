@@ -22,10 +22,15 @@ import { OutputCommentDto } from '../dto/output-comment.dto';
 import { JwtAuthGuard } from 'src/helpers/guards/jwt-auth.guard';
 import { LikeStatusCommentDto } from '../dto/like-status-comment.dto';
 import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
+import { CommandBus } from '@nestjs/cqrs';
+import { DeleteCommentByIdCommand } from '../application/use-cases/DeleteCommentById';
 
 @Controller('comments')
 export class CommentsController {
-  constructor(private readonly commentsService: CommentsService) {}
+  constructor(
+    private readonly commentsService: CommentsService,
+    private commandBus: CommandBus,
+  ) {}
 
   @Post()
   create(@Body() createCommentDto: CreateCommentDto) {
@@ -69,13 +74,16 @@ export class CommentsController {
   @UseGuards(JwtAuthGuard, ExtractUserFromToken)
   @Delete(':id')
   async remove(@Param('id') id: string, @Request() req) {
-    const comment = await this.commentsService.findById(id, null);
+    return await this.commandBus.execute(
+      new DeleteCommentByIdCommand(id, req.user.userId),
+    );
+    /* const comment = await this.commentsService.findById(id, null);
     if (!comment) throw new NotFoundException();
     if (comment.commentatorInfo.userId !== req.user.userId) {
       throw new ForbiddenException();
     }
     await this.commentsService.remove(id);
-    return HttpStatus.NO_CONTENT;
+    return HttpStatus.NO_CONTENT; */
   }
   @HttpCode(HttpStatus.NO_CONTENT)
   @UseGuards(JwtAuthGuard)

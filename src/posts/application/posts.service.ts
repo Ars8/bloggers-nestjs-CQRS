@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePostDto } from './dto/create-post.dto';
-import { UpdatePostDto } from './dto/update-post.dto';
-import { PostsRepository } from './posts.repository';
-import { OutputPostDto } from './dto/output-post.dto';
-import { PaginationViewType } from '../helpers/transformToPaginationView';
-import { QueryType } from '../helpers/queryHandler';
-import { CreateCommentDto } from '../comments/dto/create-comment.dto';
-import { CommentsRepository } from '../comments/infrastructure/comments.repository';
-import { OutputCommentDto } from '../comments/dto/output-comment.dto';
-import { LikeStatusPostDto } from './dto/like-status-post.dto';
+import { CreatePostDto } from '../dto/create-post.dto';
+import { UpdatePostDto } from '../dto/update-post.dto';
+import { PostsRepository } from '../posts.repository';
+import { OutputPostDto } from '../dto/output-post.dto';
+import { PaginationViewType } from '../../helpers/transformToPaginationView';
+import { QueryType } from '../../helpers/queryHandler';
+import { CreateCommentDto } from '../../comments/dto/create-comment.dto';
+import { CommentsRepository } from '../../comments/infrastructure/comments.repository';
+import { OutputCommentDto } from '../../comments/dto/output-comment.dto';
+import { LikeStatusPostDto } from '../dto/like-status-post.dto';
 
 @Injectable()
 export class PostsService {

@@ -4,8 +4,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Post, PostSchema } from './entities/post.entity';
 import { Blog, BlogSchema } from '../blogs/entities/blog.entity';
 import { Comment, CommentSchema } from 'src/comments/domain/entities/comment.entity';
-import { PostsController } from './posts.controller';
-import { PostsService } from './posts.service';
+import { PostsController } from './api/posts.controller';
+import { PostsService } from './application/posts.service';
 import { CommentsRepository } from 'src/comments/infrastructure/comments.repository';
 import { LikePost, LikePostSchema } from './entities/like-post.entity';
 import {

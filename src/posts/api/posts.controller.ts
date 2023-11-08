@@ -14,17 +14,17 @@ import {
   Request,
   BadRequestException,
 } from '@nestjs/common';
-import { PostsService } from './posts.service';
-import { CreatePostDto } from './dto/create-post.dto';
-import { UpdatePostDto } from './dto/update-post.dto';
-import { OutputPostDto } from './dto/output-post.dto';
-import { PaginationViewType } from '../helpers/transformToPaginationView';
-import { queryHandler } from '../helpers/queryHandler';
-import { CreateCommentDto } from '../comments/dto/create-comment.dto';
-import { OutputCommentDto } from '../comments/dto/output-comment.dto';
+import { PostsService } from '../application/posts.service';
+import { CreatePostDto } from '../dto/create-post.dto';
+import { UpdatePostDto } from '../dto/update-post.dto';
+import { OutputPostDto } from '../dto/output-post.dto';
+import { PaginationViewType } from '../../helpers/transformToPaginationView';
+import { queryHandler } from '../../helpers/queryHandler';
+import { CreateCommentDto } from '../../comments/dto/create-comment.dto';
+import { OutputCommentDto } from '../../comments/dto/output-comment.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { JwtAuthGuard } from 'src/helpers/guards/jwt-auth.guard';
-import { LikeStatusPostDto } from './dto/like-status-post.dto';
+import { LikeStatusPostDto } from '../dto/like-status-post.dto';
 import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
 
 @Controller('posts')

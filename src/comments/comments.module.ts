@@ -4,12 +4,16 @@ import { CommentsController } from './api/comments.controller';
 import { CommentsRepository } from './infrastructure/comments.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Comment, CommentSchema } from './domain/entities/comment.entity';
-import { LikeComment, LikeCommentSchema } from './domain/entities/like-comment.entity';
+import {
+  LikeComment,
+  LikeCommentSchema,
+} from './domain/entities/like-comment.entity';
 import { PreparationComments } from './preparation.comments';
 import { JwtService } from '@nestjs/jwt';
 import { PostSchema } from 'src/posts/entities/post.entity';
 import { Blog, BlogSchema } from 'src/blogs/entities/blog.entity';
 import { LikePost, LikePostSchema } from 'src/posts/entities/like-post.entity';
+import { CqrsModule } from '@nestjs/cqrs';
 
 @Module({
   imports: [
@@ -20,6 +24,7 @@ import { LikePost, LikePostSchema } from 'src/posts/entities/like-post.entity';
       { name: LikePost.name, schema: LikePostSchema },
       { name: LikeComment.name, schema: LikeCommentSchema },
     ]),
+    CqrsModule,
   ],
   controllers: [CommentsController],
   providers: [
