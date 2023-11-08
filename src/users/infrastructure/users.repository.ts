@@ -1,20 +1,20 @@
 import { InjectModel } from '@nestjs/mongoose';
-import { EmailConfirmation, User, UserDocument } from './entities/user.entity';
+import { EmailConfirmation, User, UserDocument } from '../domain/entities/user.entity';
 import { isValidObjectId, Model } from 'mongoose';
-import { CreateUserDto } from './dto/create-user.dto';
-import { idMapper } from '../helpers/id-mapper';
-import { OutputUserDto } from './dto/output-user.dto';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { idMapper } from '../../helpers/id-mapper';
+import { OutputUserDto } from '../dto/output-user.dto';
 import {
   BadRequestException,
   HttpException,
   HttpStatus,
   Injectable,
 } from '@nestjs/common';
-import { QueryType } from '../helpers/queryHandler';
+import { QueryType } from '../../helpers/queryHandler';
 import {
   PaginationViewType,
   transformToPaginationView,
-} from '../helpers/transformToPaginationView';
+} from '../../helpers/transformToPaginationView';
 
 @Injectable()
 export class UsersRepository {

@@ -1,23 +1,25 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { BlogsRepository } from './blogs/blogs.repository';
-import { Cat, CatSchema } from './blogs/cats-schema';
+import { BlogsRepository } from './blogs/infrastructure/blogs.repository';
 import { BlogsModule } from './blogs/blogs.module';
-import { Blog, BlogSchema } from './blogs/entities/blog.entity';
+import { Blog, BlogSchema } from './blogs/domain/entities/blog.entity';
 import { PostsModule } from './posts/posts.module';
-import { Post, PostSchema } from './posts/entities/post.entity';
+import { Post, PostSchema } from './posts/domain/entities/post.entity';
 import configuration from './config/configuration';
 import { TestingModule } from './testing/testing.module';
 import { UsersModule } from './users/users.module';
-import { User, UserSchema } from './users/entities/user.entity';
+import { User, UserSchema } from './users/domain/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { CommentsModule } from './comments/comments.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { BlogExistsValidator } from './validators/blog-exists-validator';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from './exeption.filter';
-import { LikePost, LikePostSchema } from './posts/entities/like-post.entity';
+import {
+  LikePost,
+  LikePostSchema,
+} from './posts/domain/entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentSchema,
@@ -58,10 +60,6 @@ import { ThrottlerModule } from '@nestjs/throttler';
       }),
     }),
     MongooseModule.forFeature([
-      {
-        name: Cat.name,
-        schema: CatSchema,
-      },
       {
         name: Blog.name,
         schema: BlogSchema,

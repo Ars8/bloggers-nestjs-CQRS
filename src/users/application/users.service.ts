@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { HashManager } from '../managers/hashManager';
-import { UsersRepository } from './users.repository';
-import { OutputUserDto } from './dto/output-user.dto';
-import { QueryType } from '../helpers/queryHandler';
-import { PaginationViewType } from '../helpers/transformToPaginationView';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { HashManager } from '../../managers/hashManager';
+import { UsersRepository } from '../infrastructure/users.repository';
+import { OutputUserDto } from '../dto/output-user.dto';
+import { QueryType } from '../../helpers/queryHandler';
+import { PaginationViewType } from '../../helpers/transformToPaginationView';
 
 @Injectable()
 export class UsersService {

@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Blog, BlogDocument } from 'src/blogs/entities/blog.entity';
-import { User, UserDocument } from 'src/users/entities/user.entity';
+import { Blog, BlogDocument } from 'src/blogs/domain/entities/blog.entity';
+import { User, UserDocument } from 'src/users/domain/entities/user.entity';
 import { Model } from 'mongoose';
-import { Post, PostDocument } from 'src/posts/entities/post.entity';
+import { Post, PostDocument } from 'src/posts/domain/entities/post.entity';
 import { Comment, CommentDocument } from 'src/comments/domain/entities/comment.entity';
 import {
   LikePost,
   LikePostDocument,
-} from 'src/posts/entities/like-post.entity';
+} from 'src/posts/domain/entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentDocument,

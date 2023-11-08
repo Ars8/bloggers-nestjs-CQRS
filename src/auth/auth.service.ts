@@ -5,13 +5,13 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { UsersRepository } from '../users/users.repository';
+import { UsersRepository } from '../users/infrastructure/users.repository';
 import { LoginDto } from './dto/login-dto';
 import { HashManager } from '../managers/hashManager';
 import { JwtService } from '@nestjs/jwt';
 import { CreateUserDto } from '../users/dto/create-user.dto';
 import { MailManager } from '../managers/mailManager';
-import { UsersService } from '../users/users.service';
+import { UsersService } from '../users/application/users.service';
 import { v4 as uuidv4 } from 'uuid';
 import { ConfigService } from '@nestjs/config';
 

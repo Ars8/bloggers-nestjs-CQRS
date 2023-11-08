@@ -3,11 +3,11 @@ import { QueryType } from 'src/helpers/queryHandler';
 import { PaginationViewType } from 'src/helpers/transformToPaginationView';
 import { CreatePostDto } from 'src/posts/dto/create-post.dto';
 import { OutputPostDto } from 'src/posts/dto/output-post.dto';
-import { PostsRepository } from 'src/posts/posts.repository';
-import { IBlogsRepository } from './blogs.repository';
-import { CreateBlogDto } from './dto/create-blog.dto';
-import { OutputBlogDto } from './dto/output-blog.dto';
-import { UpdateBlogDto } from './dto/update-blog.dto';
+import { PostsRepository } from 'src/posts/infrastructure/posts.repository';
+import { IBlogsRepository } from '../infrastructure/blogs.repository';
+import { CreateBlogDto } from '../dto/create-blog.dto';
+import { OutputBlogDto } from '../dto/output-blog.dto';
+import { UpdateBlogDto } from '../dto/update-blog.dto';
 
 @Injectable()
 export class BlogsService {

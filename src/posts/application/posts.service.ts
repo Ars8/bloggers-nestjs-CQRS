@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePostDto } from '../dto/create-post.dto';
 import { UpdatePostDto } from '../dto/update-post.dto';
-import { PostsRepository } from '../posts.repository';
+import { PostsRepository } from '../infrastructure/posts.repository';
 import { OutputPostDto } from '../dto/output-post.dto';
 import { PaginationViewType } from '../../helpers/transformToPaginationView';
 import { QueryType } from '../../helpers/queryHandler';

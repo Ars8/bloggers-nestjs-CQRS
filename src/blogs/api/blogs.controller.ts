@@ -15,18 +15,23 @@ import {
 } from '@nestjs/common';
 import { queryHandler } from 'src/helpers/queryHandler';
 import { PaginationViewType } from 'src/helpers/transformToPaginationView';
-import { CreatePostForBlogDto } from '../posts/dto/create-post-for-blog.dto';
+import { CreatePostForBlogDto } from '../../posts/dto/create-post-for-blog.dto';
 import { OutputPostDto } from 'src/posts/dto/output-post.dto';
-import { BlogsService } from './blogs.service';
-import { CreateBlogDto } from './dto/create-blog.dto';
-import { OutputBlogDto } from './dto/output-blog.dto';
-import { UpdateBlogDto } from './dto/update-blog.dto';
+import { BlogsService } from '../application/blogs.service';
+import { CreateBlogDto } from '../dto/create-blog.dto';
+import { OutputBlogDto } from '../dto/output-blog.dto';
+import { UpdateBlogDto } from '../dto/update-blog.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
+import { CommandBus } from '@nestjs/cqrs';
+import { FindBlogByIdQuery } from '../application/use-cases/FindBlogById';
 
 @Controller('blogs')
 export class BlogsController {
-  constructor(protected blogsService: BlogsService) {}
+  constructor(
+    protected blogsService: BlogsService,
+    private commandBus: CommandBus,
+    ) {}
   @UseGuards(AuthGuard('basic'))
   @Post()
   async create(@Body() createBlogDto: CreateBlogDto): Promise<OutputBlogDto> {
@@ -68,9 +73,10 @@ export class BlogsController {
   }
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<OutputBlogDto | null> {
-    const blog = await this.blogsService.findOne(id);
+    return await this.commandBus.execute(new FindBlogByIdQuery(id));
+    /* const blog = await this.blogsService.findOne(id);
     if (!blog) throw new NotFoundException();
-    return blog;
+    return blog; */
   }
   @UseGuards(AuthGuard('basic'))
   @HttpCode(HttpStatus.NO_CONTENT)

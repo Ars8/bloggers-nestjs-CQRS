@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
 import { QueryHandler } from '@nestjs/cqrs';
-import { PostsRepository } from 'src/posts/posts.repository';
+import { PostsRepository } from 'src/posts/infrastructure/posts.repository';
 
 export class FindPostByIdQuery {
   constructor(

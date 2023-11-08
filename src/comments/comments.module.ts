@@ -10,9 +10,9 @@ import {
 } from './domain/entities/like-comment.entity';
 import { PreparationComments } from './preparation.comments';
 import { JwtService } from '@nestjs/jwt';
-import { PostSchema } from 'src/posts/entities/post.entity';
-import { Blog, BlogSchema } from 'src/blogs/entities/blog.entity';
-import { LikePost, LikePostSchema } from 'src/posts/entities/like-post.entity';
+import { PostSchema } from 'src/posts/domain/entities/post.entity';
+import { Blog, BlogSchema } from 'src/blogs/domain/entities/blog.entity';
+import { LikePost, LikePostSchema } from 'src/posts/domain/entities/like-post.entity';
 import { CqrsModule } from '@nestjs/cqrs';
 
 @Module({

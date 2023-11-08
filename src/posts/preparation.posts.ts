@@ -5,7 +5,7 @@ import { PostsType } from 'src/posts/dto/posts-type.dto';
 import {
   LikePost,
   LikePostDocument,
-} from 'src/posts/entities/like-post.entity';
+} from 'src/posts/domain/entities/like-post.entity';
 
 @Injectable()
 export class PreparationPosts {

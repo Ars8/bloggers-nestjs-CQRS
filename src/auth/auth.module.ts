@@ -4,14 +4,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BasicStrategy } from '../helpers/strategies/auth-basic.strategy';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { UsersRepository } from '../users/users.repository';
+import { UsersRepository } from '../users/infrastructure/users.repository';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from '../users/entities/user.entity';
+import { User, UserSchema } from '../users/domain/entities/user.entity';
 import { HashManager } from '../managers/hashManager';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from '../helpers/strategies/jwt.strategy';
 import { MailManager } from '../managers/mailManager';
-import { UsersService } from '../users/users.service';
+import { UsersService } from '../users/application/users.service';
 import { JwtAuthGuard } from '../helpers/guards/jwt-auth.guard';
 import { ExtractUserFromToken } from '../helpers/guards/extractUserFromToken.guard';
 

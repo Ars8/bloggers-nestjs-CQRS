@@ -7,12 +7,12 @@ import {
   PaginationViewType,
   transformToPaginationView,
 } from 'src/helpers/transformToPaginationView';
-import { CreatePostDto } from './dto/create-post.dto';
-import { OutputPostDto } from './dto/output-post.dto';
-import { UpdatePostDto } from './dto/update-post.dto';
-import { Post, PostDocument } from './entities/post.entity';
-import { LikeStatusPostDto } from './dto/like-status-post.dto';
-import { LikePost, LikePostDocument } from './entities/like-post.entity';
+import { CreatePostDto } from '../dto/create-post.dto';
+import { OutputPostDto } from '../dto/output-post.dto';
+import { UpdatePostDto } from '../dto/update-post.dto';
+import { Post, PostDocument } from '../domain/entities/post.entity';
+import { LikeStatusPostDto } from '../dto/like-status-post.dto';
+import { LikePost, LikePostDocument } from '../domain/entities/like-post.entity';
 import { PreparationPosts } from 'src/posts/preparation.posts';
 
 const returnNameFromPopulation = (doc) => doc.name;

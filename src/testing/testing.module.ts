@@ -3,11 +3,11 @@ import { TestingService } from './testing.service';
 import { TestingController } from './testing.controller';
 import { Connection } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Blog, BlogSchema } from 'src/blogs/entities/blog.entity';
-import { Post, PostSchema } from 'src/posts/entities/post.entity';
-import { User, UserSchema } from 'src/users/entities/user.entity';
+import { Blog, BlogSchema } from 'src/blogs/domain/entities/blog.entity';
+import { Post, PostSchema } from 'src/posts/domain/entities/post.entity';
+import { User, UserSchema } from 'src/users/domain/entities/user.entity';
 import { Comment, CommentSchema } from 'src/comments/domain/entities/comment.entity';
-import { LikePost, LikePostSchema } from 'src/posts/entities/like-post.entity';
+import { LikePost, LikePostSchema } from 'src/posts/domain/entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentSchema,

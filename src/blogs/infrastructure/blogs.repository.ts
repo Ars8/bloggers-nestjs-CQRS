@@ -7,10 +7,10 @@ import {
   PaginationViewType,
   transformToPaginationView,
 } from 'src/helpers/transformToPaginationView';
-import { CreateBlogDto } from './dto/create-blog.dto';
-import { OutputBlogDto } from './dto/output-blog.dto';
-import { UpdateBlogDto } from './dto/update-blog.dto';
-import { Blog, BlogDocument } from './entities/blog.entity';
+import { CreateBlogDto } from '../dto/create-blog.dto';
+import { OutputBlogDto } from '../dto/output-blog.dto';
+import { UpdateBlogDto } from '../dto/update-blog.dto';
+import { Blog, BlogDocument } from '../domain/entities/blog.entity';
 
 export interface IBlogsRepository {
   create: (createBlogDto: CreateBlogDto) => Promise<OutputBlogDto>;
