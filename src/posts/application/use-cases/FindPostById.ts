@@ -1,3 +1,4 @@
+import { NotFoundException } from '@nestjs/common';
 import { QueryHandler } from '@nestjs/cqrs';
 import { PostsRepository } from 'src/posts/posts.repository';
 
@@ -13,6 +14,8 @@ export class FindPostByIdUseCase {
   constructor(private postsRepository: PostsRepository) {}
 
   async execute(query: FindPostByIdQuery) {
-    return this.postsRepository.findOne(query.postId, query.user);
+    const post = await this.postsRepository.findOne(query.postId, query.user);
+    if (!post) throw new NotFoundException();
+    return post;
   }
 }

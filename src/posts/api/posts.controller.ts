@@ -26,10 +26,15 @@ import { AuthGuard } from '@nestjs/passport';
 import { JwtAuthGuard } from 'src/helpers/guards/jwt-auth.guard';
 import { LikeStatusPostDto } from '../dto/like-status-post.dto';
 import { ExtractUserFromToken } from 'src/helpers/guards/extractUserFromToken.guard';
+import { CommandBus } from '@nestjs/cqrs';
+import { FindPostByIdQuery } from '../application/use-cases/FindPostById';
 
 @Controller('posts')
 export class PostsController {
-  constructor(private readonly postsService: PostsService) {}
+  constructor(
+    private readonly postsService: PostsService,
+    private commandBus: CommandBus,
+  ) {}
   @UseGuards(AuthGuard('basic'))
   @Post()
   async create(@Body() createPostDto: CreatePostDto): Promise<OutputPostDto> {
@@ -51,10 +56,10 @@ export class PostsController {
     @Request() req,
     @Param('id') id: string,
   ): Promise<OutputPostDto | null> {
-    const post = await this.postsService.findOne(id, req.user);
-    //console.log(req.user);
+    return await this.commandBus.execute(new FindPostByIdQuery(id, req.user));
+    /* const post = await this.postsService.findOne(id, req.user);
     if (!post) throw new NotFoundException();
-    return post;
+    return post; */
   }
   @UseGuards(AuthGuard('basic'))
   @HttpCode(HttpStatus.NO_CONTENT)
