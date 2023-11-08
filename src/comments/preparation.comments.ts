@@ -5,7 +5,7 @@ import { CommentType } from 'src/comments/dto/comments-type.dto';
 import {
   LikeComment,
   LikeCommentDocument,
-} from 'src/comments/entities/like-comment.entity';
+} from 'src/comments/domain/entities/like-comment.entity';
 
 @Injectable()
 export class PreparationComments {

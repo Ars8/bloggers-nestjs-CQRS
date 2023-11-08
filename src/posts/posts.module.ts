@@ -3,7 +3,7 @@ import { PostsRepository } from './posts.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Post, PostSchema } from './entities/post.entity';
 import { Blog, BlogSchema } from '../blogs/entities/blog.entity';
-import { Comment, CommentSchema } from 'src/comments/entities/comment.entity';
+import { Comment, CommentSchema } from 'src/comments/domain/entities/comment.entity';
 import { PostsController } from './posts.controller';
 import { PostsService } from './posts.service';
 import { CommentsRepository } from 'src/comments/infrastructure/comments.repository';
@@ -11,7 +11,7 @@ import { LikePost, LikePostSchema } from './entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentSchema,
-} from 'src/comments/entities/like-comment.entity';
+} from 'src/comments/domain/entities/like-comment.entity';
 import { JwtService } from '@nestjs/jwt';
 import { PreparationPosts } from './preparation.posts';
 import { PreparationComments } from 'src/comments/preparation.comments';

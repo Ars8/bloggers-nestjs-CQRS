@@ -21,7 +21,7 @@ import { LikePost, LikePostSchema } from './posts/entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentSchema,
-} from './comments/entities/like-comment.entity';
+} from './comments/domain/entities/like-comment.entity';
 import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({

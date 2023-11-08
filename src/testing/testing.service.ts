@@ -4,7 +4,7 @@ import { Blog, BlogDocument } from 'src/blogs/entities/blog.entity';
 import { User, UserDocument } from 'src/users/entities/user.entity';
 import { Model } from 'mongoose';
 import { Post, PostDocument } from 'src/posts/entities/post.entity';
-import { Comment, CommentDocument } from 'src/comments/entities/comment.entity';
+import { Comment, CommentDocument } from 'src/comments/domain/entities/comment.entity';
 import {
   LikePost,
   LikePostDocument,
@@ -12,7 +12,7 @@ import {
 import {
   LikeComment,
   LikeCommentDocument,
-} from 'src/comments/entities/like-comment.entity';
+} from 'src/comments/domain/entities/like-comment.entity';
 
 @Injectable()
 export class TestingService {

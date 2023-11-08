@@ -6,12 +6,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Blog, BlogSchema } from 'src/blogs/entities/blog.entity';
 import { Post, PostSchema } from 'src/posts/entities/post.entity';
 import { User, UserSchema } from 'src/users/entities/user.entity';
-import { Comment, CommentSchema } from 'src/comments/entities/comment.entity';
+import { Comment, CommentSchema } from 'src/comments/domain/entities/comment.entity';
 import { LikePost, LikePostSchema } from 'src/posts/entities/like-post.entity';
 import {
   LikeComment,
   LikeCommentSchema,
-} from 'src/comments/entities/like-comment.entity';
+} from 'src/comments/domain/entities/like-comment.entity';
 
 @Module({
   imports: [
